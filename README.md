@@ -44,7 +44,7 @@ This project is part of my **professional portfolio as a Front-end developer**.
 ## ▶️ How to Run the Project
 
 1. Clone the repository:
-   git clone https://github.com/your-username/React-Fundamentals.git
+   git clone [reposiroty](https://github.com/ainzenBleach/React-fundamentals-lab)
 2. Navigate to the project folder:
    cd React-Fundamentals
 3. Install the dependencies:
