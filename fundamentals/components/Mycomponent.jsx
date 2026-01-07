@@ -2,7 +2,7 @@ const MyComponent = () => {
  
     return(
         <div>
-            <p>Sendo reaproveitado em outros lugares</p>
+            <p>Being reused in other places</p>
         </div>
     )
 
