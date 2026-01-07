@@ -1,5 +1,6 @@
 //Components
 import FistComponents from '../components/FirtsComponents'
+import TemplateExpression from '../components/TemplteExpressions'
 
 //Style/css
 import './App.css'
@@ -11,6 +12,7 @@ function App() {
       <div>
         <h1>React fundaments</h1>
         <FistComponents/>
+        <TemplateExpression/>
       </div>
     </>
   )
