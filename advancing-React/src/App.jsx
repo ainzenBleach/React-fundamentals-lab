@@ -1,8 +1,9 @@
 // Components
-
+import ManageData from './components/ManageData'
 //style
 import './App.css'
 import Pokemon from "./assets/pokemon2.png"
+import ManageDara from './components/ManageData'
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
 
       <h3>Imagem in assents folder</h3>
       <img src={Pokemon} alt="" />
+
+      <ManageData/>
     </div>
   )
 }
