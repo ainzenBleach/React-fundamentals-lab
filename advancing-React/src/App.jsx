@@ -1,9 +1,9 @@
 // Components
 import ManageData from './components/ManageData'
+import ListRender from './components/ListRender'
 //style
 import './App.css'
 import Pokemon from "./assets/pokemon2.png"
-import ManageDara from './components/ManageData'
 
 function App() {
 
@@ -18,6 +18,8 @@ function App() {
       <img src={Pokemon} alt="" />
 
       <ManageData/>
+
+      <ListRender/>
     </div>
   )
 }
