@@ -15,6 +15,12 @@ function App() {
 
   const [username] = useState("mary")
 
+  const cars = [
+    {id:1,  brand:"Ferrari",color:"Red", new:"True", km:0},
+    {id:2,  brand:"BMW",color:"Green", new:"False", km:2000},
+    {id:3,  brand:"KIA",color:"white", new:"false", km:15000}
+  ]
+
   return (
     <div>
       <h1>advancing in React</h1>
@@ -39,6 +45,12 @@ function App() {
     
       <CarDetails brand={"Ford"} km={0} color={"Blue"} newCar={true}/>
       <CarDetails brand={"VW"} km={300} color={"Gray"} newCar={false}/>
+
+      {/* Loop in objects arryas */}
+
+      {cars.map((car) => (
+        <CarDetails brand={car.brand} km={car.km} color={car.color} newCar={car.new}/>
+      ))}
 
     </div>
   )
