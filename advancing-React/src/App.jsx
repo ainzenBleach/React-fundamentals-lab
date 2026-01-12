@@ -33,8 +33,13 @@ function App() {
       {/* Props */}
       <ShorUsersName name={"John"} nameConst={name} nameState={username}/>
       {/* Destructiring */}
-      <CarDetails brand={"Fiat"} km={1000} color={"Red"}/>
+      <CarDetails brand={"Fiat"} km={1000} color={"Red"} newCar={false}/>
+
+      {/* Reuse */}
     
+      <CarDetails brand={"Ford"} km={0} color={"Blue"} newCar={true}/>
+      <CarDetails brand={"VW"} km={300} color={"Gray"} newCar={false}/>
+
     </div>
   )
 }
