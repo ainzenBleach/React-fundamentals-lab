@@ -1,6 +1,7 @@
 // Components
 import ManageData from './components/ManageData'
 import ListRender from './components/ListRender'
+import ConditionalRender from './components/ConditionalRender'
 //style
 import './App.css'
 import Pokemon from "./assets/pokemon2.png"
@@ -20,6 +21,8 @@ function App() {
       <ManageData/>
 
       <ListRender/>
+
+      <ConditionalRender />
     </div>
   )
 }
