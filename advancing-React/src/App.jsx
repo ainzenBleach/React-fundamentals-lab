@@ -4,6 +4,8 @@ import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
 import ShowUsersName from './components/ShowUsersName'
 import Fragments from './components/Fragments'
+import MenssageLift from './components/Menssage'
+import ChangeMenssageState from './components/ChangeMenssageState'
 
 //style
 import './App.css'
@@ -11,6 +13,7 @@ import Pokemon from "./assets/pokemon2.png"
 import { useState } from 'react'
 import CarDetails from './components/CarDetails'
 import Container from './components/Container'
+import ExecuteFunction from './components/ExecuteFunction'
 
 function App() {
   const name = "Vic"
@@ -22,6 +25,17 @@ function App() {
     {id:2,  brand:"BMW",color:"Green", new:"False", km:2000},
     {id:3,  brand:"KIA",color:"white", new:"false", km:15000}
   ]
+
+  function showMenssage(){
+    console.log("Menssage test")
+  }
+
+  const [Menssage, setMenssage] = useState("")
+
+  const handleMenssageLift = (msg) => {
+    setMenssage(msg)
+  }
+
 
   return (
     <div>
@@ -52,7 +66,7 @@ function App() {
       {/* Loop in objects arryas */}
 
       {cars.map((car) => (
-        <CarDetails brand={car.brand} km={car.km} color={car.color} newCar={car.new}/>
+        <CarDetails brand={car.brand} km={car.km} color={car.color} newCar={car.new} key={car.id}/>
       ))}
 
       {/* Fragments */}
@@ -63,6 +77,15 @@ function App() {
       <Container>
         <p>this is the contents</p>
       </Container>
+
+      {/* Execute function */}
+
+      <ExecuteFunction myFunction={showMenssage} />
+
+      {/* State Lift */}
+
+      <MenssageLift msg={Menssage} />
+      <ChangeMenssageState handleMenssage={handleMenssageLift} />
     </div>
   )
 }
