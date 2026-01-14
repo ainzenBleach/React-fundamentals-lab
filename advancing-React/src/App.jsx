@@ -10,6 +10,7 @@ import './App.css'
 import Pokemon from "./assets/pokemon2.png"
 import { useState } from 'react'
 import CarDetails from './components/CarDetails'
+import Container from './components/Container'
 
 function App() {
   const name = "Vic"
@@ -58,6 +59,10 @@ function App() {
 
       <Fragments propFragment={"Teste"}/>
 
+      {/* Children prop */}
+      <Container>
+        <p>this is the contents</p>
+      </Container>
     </div>
   )
 }
