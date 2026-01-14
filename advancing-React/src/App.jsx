@@ -2,7 +2,8 @@
 import ManageData from './components/ManageData'
 import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
-import ShorUsersName from './components/ShorUsersName'
+import ShowUsersName from './components/ShowUsersName'
+import Fragments from './components/Fragments'
 
 //style
 import './App.css'
@@ -36,8 +37,9 @@ function App() {
       <ListRender/>
 
       <ConditionalRender />
+
       {/* Props */}
-      <ShorUsersName name={"John"} nameConst={name} nameState={username}/>
+      <ShowUsersName name={"John"} nameConst={name} nameState={username}/>
       {/* Destructiring */}
       <CarDetails brand={"Fiat"} km={1000} color={"Red"} newCar={false}/>
 
@@ -51,6 +53,10 @@ function App() {
       {cars.map((car) => (
         <CarDetails brand={car.brand} km={car.km} color={car.color} newCar={car.new}/>
       ))}
+
+      {/* Fragments */}
+
+      <Fragments propFragment={"Teste"}/>
 
     </div>
   )
