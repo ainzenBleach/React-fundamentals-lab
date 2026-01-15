@@ -1,6 +1,6 @@
 //Components
 import UserDetails from '../Components/UserDetails'
-
+import { NavBar } from '../Components/NavBar'
 //Style
 import './App.css'
 
@@ -16,6 +16,7 @@ function App() {
   return (
     <>
     <div>
+      <NavBar />
 
       <h1>Render Conditional</h1>
 
