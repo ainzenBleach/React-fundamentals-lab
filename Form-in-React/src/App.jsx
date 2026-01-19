@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='app'>
       <h2>Forms</h2>
-      < Myform />
+      < Myform user={{name:"Jonh", email:"Jonh@gmail.com"}}/>
     </div>
   )
 }
