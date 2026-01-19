@@ -19,6 +19,10 @@ const Myform = ({user}) => {
         e.preventDefault();
         console.log("Submit form")
         console.log(name, email)
+
+        // 7 - clean from
+        setemail("")
+        setname("")
     }
 
   return (
