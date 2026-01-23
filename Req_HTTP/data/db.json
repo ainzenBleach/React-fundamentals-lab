@@ -1,0 +1,24 @@
+{
+    "products":[
+        {
+            "id":1,
+            "name":"pen",
+            "price":0.99
+        },
+        {
+            "id":2,
+            "name":"pencil",
+            "price":1.99
+        },
+        {
+            "id":3,
+            "name":"Book",
+            "price":5.99
+        },
+        {
+            "id":4,
+            "name":"pencilcase",
+            "price":4.99
+        }
+    ]
+}

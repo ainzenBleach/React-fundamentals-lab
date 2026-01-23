@@ -1,7 +1,7 @@
 
 
 //style
-import { use, useState } from "react"
+import {useState } from "react"
 import "./Myform.css"
 
 const Myform = ({user}) => {
