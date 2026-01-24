@@ -6,6 +6,9 @@ const url = "http://localhost:3000/products"
 
 const [products, setproducts] = useState([]);
 
+const [name, setname] = useState("")
+const [price, setprice] = useState("")
+
  // 1 - Request data
  useEffect(() => {
 
@@ -19,6 +22,40 @@ const [products, setproducts] = useState([]);
 
  }, [])
 
+ // 2 - add products
+const handleSubmit = async (e) => {
+  e.preventDefault()
+
+  
+  const product = {
+
+    name,
+    price
+  
+};
+  
+  console.log(product)
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers:{
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(product)
+  })
+
+// loading dinamic
+
+const addedProduct = await res.json()
+
+setproducts((prevProducts) => [...prevProducts, addedProduct])
+
+setname("")
+setprice("")
+
+}
+
+
   return (
     <div className='App'>
       <h1>products list</h1>
@@ -27,6 +64,21 @@ const [products, setproducts] = useState([]);
           <li key={product.id}> {product.name} | ${product.price}</li>
         ))}
       </ul>
+
+        <div className="add-products">
+            <form onSubmit={handleSubmit}>
+              <label>
+                Name:
+                <input type="text" value={name} name="name" onChange={(e) => setname(e.target.value)}/>
+              </label>
+              <label>
+                Price:
+                <input type="number" value={price} name="price" onChange={(e) => setprice(e.target.value)}/>
+              </label>
+                <input type="submit" value={"submit"}/>
+            </form>
+        </div>
+
     </div>
   )
 }
