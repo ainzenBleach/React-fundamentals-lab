@@ -2,14 +2,20 @@ import { useEffect, useState } from 'react'
 import './App.css'
 //Custom hooks
 import { useFetch } from './hooks/useFetch';
+
+// 5 - Refact hooks
+
 function App() {
 const url = "http://localhost:3000/products"
 
 // 4 - custom hooks
 
-const {data: items} = useFetch(url)
+const {data: items, httpConfig} = useFetch(url)
 
-const [products, setproducts] = useState([]);
+// const [products, setproducts] = useState([]);
+
+
+
 
 const [name, setname] = useState("")
 const [price, setprice] = useState("")
@@ -41,19 +47,23 @@ const handleSubmit = async (e) => {
   
   console.log(product)
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers:{
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(product)
-  })
+//   const res = await fetch(url, {
+//     method: "POST",
+//     headers:{
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(product)
+//   })
 
-// dynamic loading
+// // dynamic loading
 
-const addedProduct = await res.json()
+// const addedProduct = await res.json()
 
-setproducts((prevProducts) => [...prevProducts, addedProduct])
+// setproducts((prevProducts) => [...prevProducts, addedProduct])
+
+// 5 - Refact Resquest
+
+httpConfig(product, "POST")
 
 setname("")
 setprice("")
