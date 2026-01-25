@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 export const useFetch = (url) => {
     const [data, setdata] = useState(null)
 
+    // 8 - Challenge
+    const [itemId, setItemId] = useState(null)
+
+
     // 5 - refact useFecth
     const [config, setConfig] = useState(null)
     const [method, setMethod] = useState(null)
     const [callFetch, setCallFetch] = useState(false)
+    
 
     // 7 - handle error
     const [error, setError] = useState(null)
@@ -26,7 +31,20 @@ export const useFetch = (url) => {
 
 
            setMethod(method)
+        }else if(method === "DELETE"){
+            setConfig({
+            method,
+            headers:{
+                "Content-type": "application/json"
+            },
+           }) ;
+
+
+           setMethod(method)
+           setItemId(data)
         }
+
+
     }
 
 
@@ -53,16 +71,28 @@ export const useFetch = (url) => {
     }, [url, callFetch])
 
     useEffect(() => {
+
+        let json = null
         const httpRequest = async () => {
             if(method === "POST"){
             let fetchOptions = [url, config]
 
             const res = await fetch(...fetchOptions)
 
-            const json = await res.json()
+            json = await res.json()  
+            
+        }else if(method === "DELETE"){
 
-            setCallFetch(json)
+            const deleteUrl = `${url}/${itemId}`
+
+            const res = await fetch(deleteUrl, config )
+
+            json = await res.json()  
+
         }
+        
+        setCallFetch(json)
+
         }
 
         httpRequest();

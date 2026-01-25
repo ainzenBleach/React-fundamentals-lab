@@ -70,6 +70,11 @@ setprice("")
 
 }
 
+//8 Challenge
+const handleRemove = (id) => {
+    httpConfig(id, "DELETE")
+}
+
 
   return (
     <div className='App'>
@@ -79,7 +84,9 @@ setprice("")
       {error && <p>{error}</p>}
       <ul>
         {items && items.map((product) => (
-          <li key={product.id}> {product.name} | ${product.price}</li>
+          <li key={product.id}> {product.name} | ${product.price}
+          <button onClick={() => {handleRemove(product.id)}}>Remove item</button>
+          </li>
         ))}
       </ul>
 
@@ -94,8 +101,10 @@ setprice("")
                 <input type="number" value={price} name="price" onChange={(e) => setprice(e.target.value)}/>
               </label>
               {/* Loading in POST */}
+              <div>
                 {loading && <input type="submit" disabled value={"Wait"}/>}
                 {!loading && <input type="submit" value={"submit"}/>}
+              </div>
             </form>
         </div>
 
