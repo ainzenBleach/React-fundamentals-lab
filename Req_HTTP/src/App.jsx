@@ -9,13 +9,9 @@ function App() {
 const url = "http://localhost:3000/products"
 
 // 4 - custom hooks
-
 const {data: items, httpConfig, loading, error} = useFetch(url)
 
 // const [products, setproducts] = useState([]);
-
-
-
 
 const [name, setname] = useState("")
 const [price, setprice] = useState("")
@@ -35,18 +31,12 @@ const [price, setprice] = useState("")
 
  // 2 - add products
 const handleSubmit = async (e) => {
-  e.preventDefault()
-
-  
+  e.preventDefault()  
   const product = {
-
     name,
     price
-  
 };
-  
   console.log(product)
-
 //   const res = await fetch(url, {
 //     method: "POST",
 //     headers:{
@@ -62,9 +52,7 @@ const handleSubmit = async (e) => {
 // setproducts((prevProducts) => [...prevProducts, addedProduct])
 
 // 5 - Refact Resquest
-
 httpConfig(product, "POST")
-
 setname("")
 setprice("")
 

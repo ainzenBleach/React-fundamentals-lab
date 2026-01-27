@@ -1,0 +1,24 @@
+{
+    "products" : [
+        {
+            "name": "soccerball",
+            "price": 10,
+            "color": "blue"
+        },
+        {
+            "name": "basketball",
+            "price": 5,
+            "color": "orange"
+        },
+        {
+            "name": "baseball",
+            "price": 3.75,
+            "color": "white"
+        },
+        {
+            "name": "voleiball",
+            "price": 1.10,
+            "color": "red"
+        }
+    ]
+}
