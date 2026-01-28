@@ -21,6 +21,8 @@ const Home = () => {
           <li key={item.id}>
             <h2>{item.name}</h2>
             <p>${item.price} | {item.color}</p>
+            {/* 4 - dynamic routes*/}
+            <Link to={`/products/${item.id}`}>Details</Link>
           </li>
         ))}
       </ul>

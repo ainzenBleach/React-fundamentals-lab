@@ -1,21 +1,25 @@
 {
     "products" : [
         {
+            "id":1,
             "name": "soccerball",
             "price": 10,
             "color": "blue"
         },
         {
+            "id":2,
             "name": "basketball",
             "price": 5,
             "color": "orange"
         },
         {
+            "id":3,
             "name": "baseball",
             "price": 3.75,
             "color": "white"
         },
         {
+            "id":4,
             "name": "voleiball",
             "price": 1.10,
             "color": "red"
