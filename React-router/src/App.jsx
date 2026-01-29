@@ -12,6 +12,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product_temp'
 import Info from './pages/info'
+import NotFound from './pages/NotFound'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <BrowserRouter>
           {/* 2 - links with react router */}
           <NavBar />
+          
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
@@ -29,6 +31,8 @@ function App() {
             <Route path='/products/:id' element={<Product />} />
             {/* 6 - nested routes */}
             <Route path='/products/:id/info' element={<Info />} />
+            {/* 7 - error 404 */}
+            <Route path="*" element={<NotFound />}/>
           </Routes>
         </BrowserRouter>
         </div>
