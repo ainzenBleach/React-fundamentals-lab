@@ -1,5 +1,7 @@
 //Components
 import NavBar from './components/NavBar'
+import SearchForm from './components/SearchForm'
+import Search from './components/Search'
 
 //Custom
 import './App.css'
@@ -23,7 +25,7 @@ function App() {
         <BrowserRouter>
           {/* 2 - links with react router */}
           <NavBar />
-          
+          <SearchForm />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
@@ -31,6 +33,8 @@ function App() {
             <Route path='/products/:id' element={<Product />} />
             {/* 6 - nested routes */}
             <Route path='/products/:id/info' element={<Info />} />
+            {/* 9 - Search */}
+            <Route path="/search" element={<Search />}/>
             {/* 7 - error 404 */}
             <Route path="*" element={<NotFound />}/>
           </Routes>
