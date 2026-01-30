@@ -7,7 +7,7 @@ import Search from './components/Search'
 import './App.css'
 
 //Config router
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
 //Pages
 import Home from './pages/Home'
@@ -35,6 +35,8 @@ function App() {
             <Route path='/products/:id/info' element={<Info />} />
             {/* 9 - Search */}
             <Route path="/search" element={<Search />}/>
+            {/* 10 - redirect */}
+            <Route path='/company' element={<Navigate to="/about" />} />
             {/* 7 - error 404 */}
             <Route path="*" element={<NotFound />}/>
           </Routes>
