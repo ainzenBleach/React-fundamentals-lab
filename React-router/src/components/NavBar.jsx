@@ -7,10 +7,7 @@ const NavBar = () => {
     <nav>
         {/* <Link to={"/"}>Home</Link>
         <Link to={"/about"}>About</Link> */}
-
-
         
-
          <NavLink to="/" 
          /* className={({isActive}) => (isActive ? "esta-ativo":"nao_ativo" )} */ 
          >Home</NavLink>
