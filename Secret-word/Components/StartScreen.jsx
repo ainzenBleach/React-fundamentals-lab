@@ -1,11 +1,11 @@
 import "./StartScreen.css";
 
-function StartScreen() {
+function StartScreen({startGame}) {
   return (
     <div className="start">
         <h1>Secret word</h1>
         <p>Clique para começar</p>
-        <button>Iniciar</button>
+        <button onClick={startGame}>Iniciar</button>
     </div>
   )
 }
