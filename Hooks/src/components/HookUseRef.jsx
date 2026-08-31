@@ -13,8 +13,21 @@ function HookUseRef() {
     }
     ,[])
 
+    //2 - useRef and DOM
+
+    const inputRef = useRef("")
+    const [text, setText] = useState("")
+
+    function handleSubmit(e){
+        e.preventDefault()
+        setText("")
+
+        inputRef.current.focus()
+    }
+
   return (
     <div>
+        {/* 1 - useRef */}
         <p>o componente rendenizou: {numberRef.current} vezes.</p>
         <p>Counter 1: {counter}</p>
         <button onClick={()=> setcounter(counter + 1)}>Contador A</button>
@@ -23,7 +36,13 @@ function HookUseRef() {
 
         <p>Counter 2: {counter}</p>
         <button onClick={()=> setcounterB(counterB + 1)}>Contador B</button>
-        
+        {/* 2 - useRef and DOM */}
+        <br /><br />
+        <h2>UseRef and DOM</h2>
+        <form onSubmit={handleSubmit}>
+          <input type="text" ref={inputRef} value={text} onChange={(e) => setText(e.target.value)}/>
+          <input type="submit" value="Enviar" />
+        </form>
     </div>
   )
 }
