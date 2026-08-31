@@ -1,11 +1,11 @@
 import React from 'react'
+import HookUseState from '../components/HookUseState'
 
 function useState() {
   return (
     <div>
-
-        <h1>UseState</h1>
-
+        <h2>UseState</h2>
+        <HookUseState />
     </div>
   )
 }
